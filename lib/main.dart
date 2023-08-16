@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'constants/constants.dart';
+import 'views/boardExtendTime/board_extend_time.dart';
 import 'views/delivery/delivery_timer.dart';
 // import 'views/home/home_page.dart';
 
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const DeliveryTimer(),
+      home: const BoardExtendTime(),
     );
   }
 }

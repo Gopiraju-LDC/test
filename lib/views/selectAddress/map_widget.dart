@@ -28,7 +28,7 @@ class _MapWidgetState extends State<MapWidget> {
       builder: (context, constraints) {
         var maxWidth = constraints.biggest.width;
         var maxHeight = constraints.biggest.height;
-        return Stack(
+        return Stack(   
           children: [
             SizedBox(
               height: maxHeight,
