@@ -57,7 +57,7 @@ class _DeliveryTimerState extends State<DeliveryTimer> {
             SizedBox(height: 40),
             Container(
               height: 230,
-              child: CountDownTimer(),
+              child: CountDownTimer(isTextNeed: true, strokeWidth: 15.0),
             ),
             SizedBox(height: 30),
             Text(

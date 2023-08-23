@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -6,7 +6,10 @@ import 'dart:math' as math;
 import 'package:test_application/constants/constants.dart';
 
 class CountDownTimer extends StatefulWidget {
-  const CountDownTimer({super.key});
+  CountDownTimer({required this.isTextNeed, required this.strokeWidth});
+
+  final bool isTextNeed;
+  final double strokeWidth;
 
   @override
   _CountDownTimerState createState() => _CountDownTimerState();
@@ -75,6 +78,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                               Positioned.fill(
                                 child: CustomPaint(
                                   painter: CustomTimerPainter(
+                                    strokeWidth: widget.strokeWidth,
                                     animation: controller,
                                     backgroundColor: Colors.white,
                                     color: Color(0xFF0150AD),
@@ -82,6 +86,7 @@ class _CountDownTimerState extends State<CountDownTimer>
                                   ),
                                 ),
                               ),
+                              if(widget.isTextNeed)
                               Align(
                                 alignment: FractionalOffset.center,
                                 child: Column(
@@ -157,16 +162,18 @@ class CustomTimerPainter extends CustomPainter {
     required this.backgroundColor,
     required this.indicatorBackgroundColor,
     required this.color,
+    required this.strokeWidth,
   }) : super(repaint: animation);
 
   final Animation<double> animation;
+  final double strokeWidth;
   final Color backgroundColor, color, indicatorBackgroundColor;
 
   @override
   void paint(Canvas canvas, Size size) {
     Paint indicatorColor = Paint()
       ..color = backgroundColor
-      ..strokeWidth = 15.0
+      ..strokeWidth = strokeWidth
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
@@ -184,7 +191,7 @@ class CustomTimerPainter extends CustomPainter {
 
     Paint paint = Paint()
       ..color = backgroundColor
-      ..strokeWidth = 15.0
+      ..strokeWidth = strokeWidth
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
 
