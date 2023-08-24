@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import 'constants/constants.dart';
 import 'dialog_box_widgets.dart';
+import 'uploadDocuments/upload_documets.dart';
 import 'views/boardExtendTime/board_extend_time.dart';
 import 'views/delivery/delivery_timer.dart';
 // import 'views/home/home_page.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const DialogBoxWidgets(),
+      home: const UploadDocuments(),
     );
   }
 }
