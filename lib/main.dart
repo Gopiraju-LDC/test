@@ -3,11 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'constants/constants.dart';
-import 'dialog_box_widgets.dart';
-import 'uploadDocuments/upload_documets.dart';
-import 'views/boardExtendTime/board_extend_time.dart';
-import 'views/delivery/delivery_timer.dart';
+import 'formHouse/views/bottomNavigation/bottom_navigation.dart';
+import 'ldCars/constants/constants.dart';
+import 'ldCars/uploadDocuments/upload_documets.dart';
+
 // import 'views/home/home_page.dart';
 
 void main() {
@@ -57,7 +56,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const UploadDocuments(),
+      home: const BottomNavigationScreen(),
     );
   }
 }

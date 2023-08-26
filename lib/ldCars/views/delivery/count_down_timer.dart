@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import 'package:test_application/constants/constants.dart';
+import '../../constants/constants.dart';
+
 
 class CountDownTimer extends StatefulWidget {
   CountDownTimer({required this.isTextNeed, required this.strokeWidth});

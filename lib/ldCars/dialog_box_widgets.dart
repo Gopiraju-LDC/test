@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:test_application/constants/constants.dart';
 
+import 'constants/constants.dart';
 import 'constants/imageConstants.dart';
 import 'dashed_line.dart';
 import 'views/delivery/count_down_timer.dart';
