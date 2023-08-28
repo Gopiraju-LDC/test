@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
 import '../../constants/imageConstants.dart';
 import '../bookings/bookings.dart';
+import '../home/home_page.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -97,7 +98,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         ),
       ),
       body: <Widget>[
-        Container(),
+        HomePage(),
         BookingsScreen(
           backFunction: changeScreen,
         ),

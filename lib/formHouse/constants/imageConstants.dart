@@ -2,7 +2,6 @@
 
 class Images {
   static const String MAP_IMAGE = 'assets/images/mapImage.png';
-
 }
 
 class ImageIcons {
@@ -20,7 +19,9 @@ class ImageIcons {
   static const String WHATSAPP_ICON = 'assets/icons/whatsapp.png';
   static const String PROFILE_ICON = 'assets/icons/user.png';
   static const String CALENDAR_SOLID = 'assets/icons/calendarSolid.jpg';
+}
 
-
-
+class HomePageImages {
+  // homePage
+  static const String SLIDER = 'assets/images/slider.png';
 }

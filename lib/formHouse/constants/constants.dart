@@ -15,4 +15,6 @@ const Color greyColor = Color(0xFF666666);
 
 
 const poppinsStyle = GoogleFonts.poppins;
+const interStyle = GoogleFonts.inter;
+
 const sansStyle = GoogleFonts.dmSans;
