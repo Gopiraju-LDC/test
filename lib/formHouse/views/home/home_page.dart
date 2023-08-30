@@ -1,4 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field, prefer_final_fields, sort_child_properties_last
+
+import 'dart:developer';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +26,25 @@ class _HomePageState extends State<HomePage>
     super.initState();
   }
 
+  int sliderIndex = 0;
+  getCurrentSliderIndex(int index) {
+    setState(() {
+      sliderIndex = index;
+    });
+  }
+
+  double _height = 25;
+  double _width = 70;
+
+  Duration _animationDuration = Duration(milliseconds: 300);
+  bool _isOnline = true;
+
+  _onTapSwitch() {
+    setState(() {
+      _isOnline = !_isOnline;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +54,86 @@ class _HomePageState extends State<HomePage>
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
         elevation: 0,
+        actions: [
+          Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              child: Material(
+                type: MaterialType.transparency,
+                child: InkWell(
+                  onTap: _onTapSwitch,
+                  child: Container(
+                    width: _width,
+                    height: _height,
+                    alignment: Alignment.center,
+                    child: Stack(
+                      children: [
+                        AnimatedPositioned(
+                          duration: _animationDuration,
+                          width: _isOnline ? _width : 0,
+                          bottom: 0,
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                            padding: EdgeInsets.only(right: 10),
+                            alignment: Alignment.centerRight,
+                            width: _width,
+                            height: _height,
+                            color: Color(0xFFD9D9D9),
+                            child: Text(
+                              'Online',
+                              textAlign: TextAlign.center,
+                              style: poppinsStyle(
+                                color: Colors.black,
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                            ),
+                          ),
+                        ),
+                        AnimatedPositioned(
+                          duration: _animationDuration,
+                          width: _isOnline ? 0 : _width,
+                          bottom: 0,
+                          top: 0,
+                          left: 0,
+                          child: Container(
+                            width: _width,
+                            height: _height,
+                            color: Colors.green,
+                          ),
+                        ),
+                        AnimatedPositioned(
+                          top: 0,
+                          bottom: 0,
+                          left: _isOnline ? 0 : (_width - _height),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: primaryColor,
+                            ),
+                            child: Icon(
+                              _isOnline
+                                  ? Icons.chevron_right
+                                  : Icons.chevron_left,
+                              color: Colors.white,
+                            ),
+                            height: 25,
+                            width: 25,
+                          ),
+                          duration: _animationDuration,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(width: 10),
+        ],
       ),
       body: CustomScrollView(
         slivers: [
@@ -43,30 +144,110 @@ class _HomePageState extends State<HomePage>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: double.infinity,
+                    // width: double.infinity,
                     height: 261,
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        aspectRatio: 1,
-                        viewportFraction: 0.9,
-                        initialPage: 0,
-                        enableInfiniteScroll: true,
-                        reverse: false,
-                        autoPlayInterval: Duration(seconds: 3),
-                        autoPlayAnimationDuration: Duration(milliseconds: 800),
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        scrollDirection: Axis.horizontal,
-                      ),
-                      items: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Image.asset(HomePageImages.SLIDER),
+                    child: Stack(
+                      children: [
+                        CarouselSlider(
+                          options: CarouselOptions(
+                            autoPlay: true,
+                            aspectRatio: 1.5,
+                            viewportFraction: 01.0,
+                            initialPage: 0,
+                            enableInfiniteScroll: true,
+                            reverse: false,
+                            autoPlayInterval: Duration(seconds: 3),
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 800),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            scrollDirection: Axis.horizontal,
+                            onPageChanged: (index, reason) {
+                              getCurrentSliderIndex(index);
+                            },
+                          ),
+                          items: [
+                            ...List.generate(
+                              3,
+                              (index) => ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 3),
+                                  child: Image.asset(
+                                    HomePageImages.SLIDER,
+                                    fit: BoxFit.fill,
+                                    width: double.infinity,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // ClipRRect(
+                            //   borderRadius: BorderRadius.circular(10),
+                            //   child: Padding(
+                            //     padding:
+                            //         const EdgeInsets.symmetric(horizontal: 3),
+                            //     child: Image.asset(
+                            //       HomePageImages.SLIDER,
+                            //       fit: BoxFit.fill,
+                            //       width: double.infinity,
+                            //     ),
+                            //   ),
+                            // ),
+                            //  ClipRRect(
+                            //   borderRadius: BorderRadius.circular(10),
+                            //   child: Padding(
+                            //     padding:
+                            //         const EdgeInsets.symmetric(horizontal: 3),
+                            //     child: Image.asset(
+                            //       HomePageImages.SLIDER,
+                            //       fit: BoxFit.fill,
+                            //       width: double.infinity,
+                            //     ),
+                            //   ),
+                            // ),
+                            //  ClipRRect(
+                            //   borderRadius: BorderRadius.circular(10),
+                            //   child: Padding(
+                            //     padding:
+                            //         const EdgeInsets.symmetric(horizontal: 3),
+                            //     child: Image.asset(
+                            //       HomePageImages.SLIDER,
+                            //       fit: BoxFit.fill,
+                            //       width: double.infinity,
+                            //     ),
+                            //   ),
+                            // )
+                          ],
+                        ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 3, vertical: 1),
+                            width: 40,
+                            height: 20,
+                            decoration: ShapeDecoration(
+                              color:
+                                  Colors.black.withOpacity(0.4000000059604645),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              '${sliderIndex + 1}/3',
+                              textAlign: TextAlign.right,
+                              style: poppinsStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
