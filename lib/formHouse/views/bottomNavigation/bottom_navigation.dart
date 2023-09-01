@@ -6,6 +6,7 @@ import '../../constants/constants.dart';
 import '../../constants/imageConstants.dart';
 import '../bookings/bookings.dart';
 import '../home/home_page.dart';
+import '../imageUploadScreen/image_upload_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -102,7 +103,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         BookingsScreen(
           backFunction: changeScreen,
         ),
-        Container(),
+        ImageUploadScreen(),
         Container(),
       ][currentPageIndex],
     );
