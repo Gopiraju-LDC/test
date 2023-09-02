@@ -42,6 +42,7 @@ dependencies:
   dotted_line: ^3.2.2
   google_maps_flutter:
   geolocator:
+  image_picker: 
 dev_dependencies:
   flutter_test:
     sdk: flutter

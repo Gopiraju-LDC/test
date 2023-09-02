@@ -33,17 +33,21 @@ class _ImageUploadScreenState extends State<ImageUploadScreen>
           slivers: [
             SliverToBoxAdapter(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'HYDERBAD FARM HOUSE  ',
-                    style: poppinsStyle(
-                      color: primaryColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
+                  Expanded(
+                    flex: 4,
+                    child: Text(
+                      'HYDERBAD FARM HOUSE  ',
+                      style: poppinsStyle(
+                        color: primaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                  SizedBox(width: 20),
                   Expanded(
+                    flex: 4,
                     child: SizedBox(
                       height: 35,
                       child: TabBar(
