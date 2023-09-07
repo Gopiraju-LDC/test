@@ -6,8 +6,8 @@ import '../../constants/constants.dart';
 import 'components/boost_your_booking_card.dart';
 import 'components/upcoming_card.dart';
 
-class UpComingTab extends StatelessWidget {
-  const UpComingTab({super.key});
+class InHouse extends StatelessWidget {
+  const InHouse({super.key});
 
   @override
   Widget build(BuildContext context) {

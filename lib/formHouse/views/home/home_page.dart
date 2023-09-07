@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage>
 
   Duration _animationDuration = Duration(milliseconds: 300);
   bool _isOnline = true;
-
+  bool _switchValue = false;
   _onTapSwitch() {
     setState(() {
       _isOnline = !_isOnline;
@@ -49,7 +49,207 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 108,
+                  child: DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: ShapeDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/60x60"),
+                              fit: BoxFit.fill,
+                            ),
+                            shape: OvalBorder(),
+                            shadows: [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 4,
+                                offset: Offset(0, 4),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 18),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Kakashi Hatke',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'Brundavanam',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 10,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                ListTile(
+                  tileColor: Colors.white,
+                  title: Text(
+                    'Promote My Property',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  subtitle: Text(
+                    'For Just ₹2000/month',
+                    style: TextStyle(
+                      color: Color(0xFF666666),
+                      fontSize: 9,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  trailing: Switch(
+                    value: _switchValue,
+                    onChanged: (value) {
+                      setState(() {
+                        _switchValue = value;
+                      });
+                    },
+                    activeColor: Color(0xFFF86F03), // Set the active color
+                  ),
+                )
+              ],
+            ),
+            ListTile(
+
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(Icons.add_circle_outline, color: Colors.black),
+              title: Text(
+                'Add Another Property',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 9),
+            ListTile(
+              
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(
+                Icons.house,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Your Bookings',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 9),
+            ListTile(
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(
+                Icons.house,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Your Earnings',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 9),
+            ListTile(
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(
+                Icons.house,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Bank Details',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 9),
+            ListTile(
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(
+                Icons.house,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Agreement Policy',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 9),
+            ListTile(
+              tileColor: Color(0x33D9D9D9),
+              leading: Icon(
+                Icons.question_mark,
+                color: Colors.black,
+              ),
+              title: Text(
+                'Questions',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
@@ -181,42 +381,6 @@ class _HomePageState extends State<HomePage>
                                 ),
                               ),
                             ),
-                            // ClipRRect(
-                            //   borderRadius: BorderRadius.circular(10),
-                            //   child: Padding(
-                            //     padding:
-                            //         const EdgeInsets.symmetric(horizontal: 3),
-                            //     child: Image.asset(
-                            //       HomePageImages.SLIDER,
-                            //       fit: BoxFit.fill,
-                            //       width: double.infinity,
-                            //     ),
-                            //   ),
-                            // ),
-                            //  ClipRRect(
-                            //   borderRadius: BorderRadius.circular(10),
-                            //   child: Padding(
-                            //     padding:
-                            //         const EdgeInsets.symmetric(horizontal: 3),
-                            //     child: Image.asset(
-                            //       HomePageImages.SLIDER,
-                            //       fit: BoxFit.fill,
-                            //       width: double.infinity,
-                            //     ),
-                            //   ),
-                            // ),
-                            //  ClipRRect(
-                            //   borderRadius: BorderRadius.circular(10),
-                            //   child: Padding(
-                            //     padding:
-                            //         const EdgeInsets.symmetric(horizontal: 3),
-                            //     child: Image.asset(
-                            //       HomePageImages.SLIDER,
-                            //       fit: BoxFit.fill,
-                            //       width: double.infinity,
-                            //     ),
-                            //   ),
-                            // )
                           ],
                         ),
                         Align(

@@ -5,6 +5,8 @@ import 'package:test_application/formHouse/views/bookings/upcoming_tab.dart';
 
 import '../../constants/constants.dart';
 import '../../constants/imageConstants.dart';
+import 'completed.dart';
+import 'in_house.dart';
 
 class BookingsScreen extends StatefulWidget {
   BookingsScreen({required this.backFunction});
@@ -99,8 +101,8 @@ class _BookingsScreenState extends State<BookingsScreen>
               controller: tabController,
               children: [
                 UpComingTab(),
-                Container(),
-                Container(),
+                InHouse(),
+                Completed(),
               ],
             ),
           )
