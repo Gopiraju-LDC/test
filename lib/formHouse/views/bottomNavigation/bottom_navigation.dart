@@ -65,7 +65,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           items: [
             BottomNavigationBarItem(
               icon: Image.asset(
-                ImageIcons.HOME_ICON,
+                FormImages.HOME_ICON,
                 scale: 4,
                 // color: currentPageIndex == 0 ? primaryColor : greyColor,
               ),
@@ -73,7 +73,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                ImageIcons.CALENDAR_ICON,
+                FormImages.CALENDAR_ICON,
                 scale: 4,
                 // color: currentPageIndex == 0 ? primaryColor : greyColor,
               ),
@@ -81,7 +81,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                ImageIcons.WHATSAPP_ICON,
+                FormImages.WHATSAPP_ICON,
                 scale: 4,
                 // color: currentPageIndex == 0 ? primaryColor : greyColor,
               ),
@@ -89,7 +89,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                ImageIcons.PROFILE_ICON,
+                FormImages.PROFILE_ICON,
                 scale: 4,
                 // color: currentPageIndex == 0 ? primaryColor : greyColor,
               ),

@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'formHouse/views/bottomNavigation/bottom_navigation.dart';
 import 'ldCars/constants/constants.dart';
 import 'ldCars/uploadDocuments/upload_documets.dart';
+import 'ldCars/views/extendBooking/extend_booking.dart';
 
 // import 'views/home/home_page.dart';
 
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const BottomNavigationScreen(),
+      home: const ExtendBooking(),
     );
   }
 }

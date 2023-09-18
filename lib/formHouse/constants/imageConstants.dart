@@ -4,7 +4,7 @@ class Images {
   static const String MAP_IMAGE = 'assets/images/mapImage.png';
 }
 
-class ImageIcons {
+class FormImages {
   // ldIcons
 
   static const String ACCOUNT_HELP = 'assets/ldIcons/mdi_account-help.png';

@@ -57,7 +57,7 @@ class _BookingsScreenState extends State<BookingsScreen>
           IconButton(
             onPressed: () {},
             icon: Image.asset(
-              ImageIcons.CALENDAR_SOLID,
+              FormImages.CALENDAR_SOLID,
             ),
           )
         ],
