@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test_application/ldCars/views/gpsFitting/gps_fitting.dart';
 
 import 'formHouse/views/bottomNavigation/bottom_navigation.dart';
 import 'ldCars/constants/constants.dart';
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const ExtendBooking(),
+      home: const GpsFitting(),
     );
   }
 }

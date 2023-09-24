@@ -2,7 +2,8 @@
 
 class Images {
   static const String MAP_IMAGE = 'assets/images/mapImage.png';
-
+  static const String GPS_IMAGE = 'assets/images/carGps.png';
+  static const String OWNER_APP = 'assets/images/ownerApp.png';
 }
 
 class ImageIcons {
@@ -15,5 +16,4 @@ class ImageIcons {
   static const String OK_ICON = 'assets/ldIcons/Ok.png';
   static const String CAM_ICON = 'assets/ldIcons/camera.png';
   static const String SEND = 'assets/icons/send.png';
-
 }

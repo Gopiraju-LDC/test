@@ -2,6 +2,9 @@
 
 class Images {
   static const String MAP_IMAGE = 'assets/images/mapImage.png';
+  static const String GPS_IMAGE = 'assets/images/carGps.png';
+  static const String OWNER_APP = 'assets/images/ownerApp.png';
+  static const String BANNER = 'assets/images/banner.png';
 }
 
 class FormImages {
@@ -19,6 +22,11 @@ class FormImages {
   static const String WHATSAPP_ICON = 'assets/icons/whatsapp.png';
   static const String PROFILE_ICON = 'assets/icons/user.png';
   static const String CALENDAR_SOLID = 'assets/icons/calendarSolid.jpg';
+  static const String INSTA = 'assets/icons/insta.png';
+
+  static const String YOUTUBE = 'assets/icons/youtube.png';
+
+  static const String DRAWER_ICON = 'assets/icons/drawerIcon.png';
 }
 
 class HomePageImages {
