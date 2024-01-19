@@ -8,6 +8,10 @@ const Color buttonColor = Color(0xFF61FC6E);
 final Color blackColor = Colors.black.withOpacity(0.8799999952316284);
 const Color borderColor = Color(0xFF5B5B5B);
 const Color dashColor = Color(0xFF343434);
+const Color backgroundColor = Color(0xFFF7F7F7);
+const Color textColor = Color(0xFF000000);
+const Color secondTextColor =  Color(0xFF666666);
+const Color barColor = Color(0xFF556EE6);
 
 
 const poppinsStyle = GoogleFonts.poppins;
