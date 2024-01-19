@@ -65,7 +65,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Kakashi Hatke',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.05,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -75,7 +75,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Brundavanam',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -85,7 +85,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       '+9182647989',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -95,7 +95,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Pan : GY1234568N7',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -105,7 +105,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'GST : 114563325889',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -162,7 +162,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                       width: Get.width * 0.55,
                       child: Text(
                         'Subscribe To Boost Your Bookings',
-                        style: TextStyle(
+                        style: poppinsStyle(
                             fontSize: Get.width * 0.04,
                             color: textColor,
                             fontWeight: FontWeight.w400),
@@ -172,7 +172,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                       width: Get.width * 0.55,
                       child: Text(
                         'Your Will Get 100 More Marketing Than Regular Properties We Give You Top Most Recommends ',
-                        style: TextStyle(
+                        style: poppinsStyle(
                             fontSize: Get.width * 0.03,
                             color: textColor,
                             letterSpacing: 0.5,
@@ -189,7 +189,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   child: Text(
                     'Subscribe Now',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: Colors.white,
                         letterSpacing: 0.5,
@@ -222,7 +222,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   width: Get.width * 0.45,
                   child: Text(
                     'In Review',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.055,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -235,7 +235,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   width: Get.width * 0.45,
                   child: Text(
                     'Will Review in 12 Hrs',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.035,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -264,7 +264,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   Text(
                     'View 1',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -290,7 +290,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   Text(
                     'View 2',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -320,7 +320,7 @@ class _GetProfileViewState extends State<GetProfileView> {
               ),
               Text(
                 'Log Out',
-                style: TextStyle(
+                style: poppinsStyle(
                     fontSize: Get.width * 0.055,
                     color: Colors.red,
                     letterSpacing: 0.5,
@@ -360,7 +360,7 @@ class CustomOptionWidget extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(
+                style: poppinsStyle(
                   fontSize: Get.width * 0.04,
                   fontWeight: FontWeight.w400,
                   color: textColor,

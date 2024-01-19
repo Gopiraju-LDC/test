@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:test_application/views/bottom_navigation/view/bottom_navigation_view.dart';
 
 import 'constants/constants.dart';
 import 'views/delivery/delivery_timer.dart';
@@ -55,7 +56,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
 
       ),
-      home: const DeliveryTimer(),
+      home: BottomNavigationView(key: key),
+    //  const DeliveryTimer(),
     );
   }
 }

@@ -76,7 +76,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                   children: [
                     Text(
                       'Statement',
-                      style: TextStyle(
+                      style: poppinsStyle(
                           fontSize: Get.width * 0.04,
                           color: textColor,
                           fontWeight: FontWeight.w400),
@@ -88,7 +88,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                       children: [
                         Text(
                           'Booking Earnings',
-                          style: TextStyle(
+                          style: poppinsStyle(
                               fontSize: Get.width * 0.04,
                               color: textColor,
                               fontWeight: FontWeight.w500),
@@ -137,7 +137,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 },
                 textAlign: TextAlign.justify,
                 textAlignVertical: TextAlignVertical.top,
-                style: TextStyle(color: Colors.grey),
+                style: poppinsStyle(color: Colors.grey),
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     icon: Container(
@@ -161,7 +161,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                       ),
                     ),
                     hintText: 'search By Booking Id/ Mobile Number',
-                    hintStyle: TextStyle(
+                    hintStyle: poppinsStyle(
                       color: Colors.grey,
                       fontSize: Get.width*0.035,
                     ),contentPadding: EdgeInsets.only(bottom: 20)
@@ -188,7 +188,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
               children: [
                 Text(
                   '₹92,695',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.06,
                       color: textColor,
                       fontWeight: FontWeight.w500),
@@ -198,7 +198,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 ),
                 Text(
                   'Earnings',
-                  style: TextStyle(
+                  style: poppinsStyle(
                     fontSize: Get.width * 0.03,
                     color: secondTextColor,
                     fontWeight: FontWeight.w400,
@@ -215,7 +215,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
               children: [
                 Text(
                   '20',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.06,
                       color: textColor,
                       fontWeight: FontWeight.w500),
@@ -225,7 +225,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 ),
                 Text(
                   'Bookings',
-                  style: TextStyle(
+                  style: poppinsStyle(
                     fontSize: Get.width * 0.03,
                     color: secondTextColor,
                     fontWeight: FontWeight.w400,
@@ -261,7 +261,7 @@ class EarningList extends StatelessWidget {
               children: [
                 Text(
                   'Light Yagami',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.05,
                       color: textColor,
                       fontWeight: FontWeight.w400),
@@ -278,7 +278,7 @@ class EarningList extends StatelessWidget {
                           width: Get.width*0.55,
                             child: Text(
                               '9878865412',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.04,
                                   color: textColor,
                                   fontWeight: FontWeight.w400),
@@ -288,7 +288,7 @@ class EarningList extends StatelessWidget {
                             width: Get.width*0.62,
                             child: Text(
                               '10am, 26may2023 - 11am,27may2023',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.035,
                                   color: textColor,
                                   fontWeight: FontWeight.w400),
@@ -301,7 +301,7 @@ class EarningList extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text(
                               '₹5000',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.06,
                                   color: barColor,
                                   fontWeight: FontWeight.w400),
@@ -311,7 +311,7 @@ class EarningList extends StatelessWidget {
 
                             child: Text(
                               'View More',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.04,
                                   color: barColor,
                                   fontWeight: FontWeight.w400),

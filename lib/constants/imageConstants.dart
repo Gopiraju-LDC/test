@@ -24,6 +24,10 @@ class ImageIcons {
 class Iconss {
 
   static const String CALENDAR_ICON = 'assets/icons/calendar.png';
+  static const String HOME_ICON = 'assets/icons/home.png';
+  static const String SUBSCRIPTION_ICON = 'assets/icons/subscription.png';
+  static const String EARNING_ICON = 'assets/icons/earning.png';
+
 
 
 }
