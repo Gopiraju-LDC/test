@@ -122,8 +122,6 @@ class _EarningDetailViewState extends State<EarningDetailView> {
 
   Widget searchBox() {
     return Container(
-      // margin: EdgeInsets.only(top: Get.height * 0.02),
-
       height: Get.height * 0.06,
       child: Row(
         children: [
