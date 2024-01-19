@@ -1,9 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:test_application/constants/constants.dart';
 
 import '../../constants/imageConstants.dart';
+import '../../earning data/get_earning_details.dart';
 import '../selectAddress/select_address.dart';
 import 'count_down_timer.dart';
 
@@ -212,7 +217,9 @@ class _DeliveryTimerState extends State<DeliveryTimer> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(EarningDetailView());
+                    },
                     icon: Image.asset(
                       ImageIcons.PHONE_ICON,
                     ),
