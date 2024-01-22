@@ -19,11 +19,16 @@ class ImageIcons {
   static const String MIC = 'assets/ldIcons/mic.png';
   static const String EDIT_ICON = 'assets/ldIcons/edit.png';
   static const String LOGOUT_ICON = 'assets/ldIcons/logout.png';
-
+  static const String DOWNLOAD_ICON = 'assets/ldIcons/download.png';
+  static const String WHATSAPP_ICON = 'assets/ldIcons/whatsapp.png';
 }
 class Iconss {
 
   static const String CALENDAR_ICON = 'assets/icons/calendar.png';
+  static const String HOME_ICON = 'assets/icons/home.png';
+  static const String SUBSCRIPTION_ICON = 'assets/icons/subscription.png';
+  static const String EARNING_ICON = 'assets/icons/earning.png';
+
 
 
 }

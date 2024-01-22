@@ -12,7 +12,8 @@ const Color backgroundColor = Color(0xFFF7F7F7);
 const Color textColor = Color(0xFF000000);
 const Color secondTextColor =  Color(0xFF666666);
 const Color barColor = Color(0xFF556EE6);
-
+const Color ratingColor = Color(0xFFFFD700);
+const Color simmerColor = Color(0xFFD9D9D9);
 
 const poppinsStyle = GoogleFonts.poppins;
 const sansStyle = GoogleFonts.dmSans;

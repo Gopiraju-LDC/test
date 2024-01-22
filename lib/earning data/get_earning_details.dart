@@ -4,9 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:test_application/earning%20data/statment.dart';
 
 import '../constants/constants.dart';
 import '../constants/imageConstants.dart';
+import 'booking_details.dart';
 import 'get_profileView.dart';
 
 class EarningDetailView extends StatefulWidget {
@@ -18,6 +20,7 @@ class EarningDetailView extends StatefulWidget {
 
 class _EarningDetailViewState extends State<EarningDetailView> {
   TextEditingController? _textEditingController;
+  int selcetedStatement = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -57,72 +60,114 @@ class _EarningDetailViewState extends State<EarningDetailView> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-            width: Get.width,
-            height: Get.height,
-            margin: EdgeInsets.all(Get.width * 0.05),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: Get.height * 0.01,
-                ),
-                searchBox(),
-                SizedBox(
-                  height: Get.height * 0.03,
-                ),
-                Row(
+      body: Container(
+          width: Get.width,
+          height: Get.height,
+          child: Column(
+            children: [
+              SizedBox(
+                height: Get.height * 0.01,
+              ),
+              searchBox(),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Statement',
-                      style: TextStyle(
-                          fontSize: Get.width * 0.04,
-                          color: textColor,
-                          fontWeight: FontWeight.w400),
+                    GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          selcetedStatement =0;
+                        });
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            'Statement',
+                            style: poppinsStyle(
+                                fontSize: Get.width * 0.04,
+                                color: textColor,
+                                fontWeight:  selcetedStatement==0 ? FontWeight.w500: FontWeight.w400),
+                          ),
+                          Visibility(
+                            visible: selcetedStatement==0,
+                            child: Container(
+                              height: Get.width * 0.01,
+                              width: Get.width * 0.16,
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: barColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
+
                     SizedBox(
                       width: Get.width * 0.1,
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          'Booking Earnings',
-                          style: TextStyle(
-                              fontSize: Get.width * 0.04,
-                              color: textColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Container(
-                          height: Get.width * 0.01,
-                          width: Get.width * 0.18,
-                          margin: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: barColor,
+                    GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            selcetedStatement =1;
+                          });
+                        },
+                      child: Column(
+                        children: [
+                          Text(
+                            'Booking Earnings',
+                            style: poppinsStyle(
+                                fontSize: Get.width * 0.04,
+                                color: textColor,
+                                fontWeight: selcetedStatement==1 ? FontWeight.w500: FontWeight.w400),
                           ),
-                        )
-                      ],
+                          Visibility(
+                              visible: selcetedStatement==1,
+                            child: Container(
+                              height: Get.width * 0.01,
+                              width: Get.width * 0.18,
+                              margin: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: barColor,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: Get.height * 0.02,
-                ),
-                totalEarningBlockingBox(),
-                SizedBox(
-                  height: Get.height * 0.02,
-                ),
-                Container(height: Get.height * 0.6, child: EarningList()),
-              ],
-            )),
-      ),
+              ),
+            selcetedStatement==0?StatementView():
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
+                child: earningView()),
+            ],
+          )),
     );
   }
 
+  Widget earningView()
+  {
+    return Column( children: [
+      SizedBox(
+        height: Get.height * 0.02,
+      ),
+      totalEarningBlockingBox(),
+      SizedBox(
+        height: Get.height * 0.02,
+      ),
+      Container(height: Get.height * 0.51, child: EarningList()),
+    ],);
+
+  }
   Widget searchBox() {
     return Container(
       height: Get.height * 0.06,
+      margin: EdgeInsets.all(Get.width * 0.05),
       child: Row(
         children: [
           Expanded(
@@ -137,7 +182,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 },
                 textAlign: TextAlign.justify,
                 textAlignVertical: TextAlignVertical.top,
-                style: TextStyle(color: Colors.grey),
+                style: poppinsStyle(color: Colors.grey),
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     icon: Container(
@@ -161,7 +206,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                       ),
                     ),
                     hintText: 'search By Booking Id/ Mobile Number',
-                    hintStyle: TextStyle(
+                    hintStyle: poppinsStyle(
                       color: Colors.grey,
                       fontSize: Get.width*0.035,
                     ),contentPadding: EdgeInsets.only(bottom: 20)
@@ -188,7 +233,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
               children: [
                 Text(
                   '₹92,695',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.06,
                       color: textColor,
                       fontWeight: FontWeight.w500),
@@ -198,7 +243,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 ),
                 Text(
                   'Earnings',
-                  style: TextStyle(
+                  style: poppinsStyle(
                     fontSize: Get.width * 0.03,
                     color: secondTextColor,
                     fontWeight: FontWeight.w400,
@@ -215,7 +260,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
               children: [
                 Text(
                   '20',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.06,
                       color: textColor,
                       fontWeight: FontWeight.w500),
@@ -225,7 +270,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
                 ),
                 Text(
                   'Bookings',
-                  style: TextStyle(
+                  style: poppinsStyle(
                     fontSize: Get.width * 0.03,
                     color: secondTextColor,
                     fontWeight: FontWeight.w400,
@@ -248,8 +293,11 @@ class EarningList extends StatelessWidget {
       itemCount: 15,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () async {},
-          child: Container(
+          onTap: () async {
+            Get.to(BookingDetails());
+          },
+          child:
+          Container(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             margin: EdgeInsets.symmetric(vertical: 10, ),
             decoration: BoxDecoration(
@@ -261,7 +309,7 @@ class EarningList extends StatelessWidget {
               children: [
                 Text(
                   'Light Yagami',
-                  style: TextStyle(
+                  style: poppinsStyle(
                       fontSize: Get.width * 0.05,
                       color: textColor,
                       fontWeight: FontWeight.w400),
@@ -278,7 +326,7 @@ class EarningList extends StatelessWidget {
                           width: Get.width*0.55,
                             child: Text(
                               '9878865412',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.04,
                                   color: textColor,
                                   fontWeight: FontWeight.w400),
@@ -288,7 +336,7 @@ class EarningList extends StatelessWidget {
                             width: Get.width*0.62,
                             child: Text(
                               '10am, 26may2023 - 11am,27may2023',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.035,
                                   color: textColor,
                                   fontWeight: FontWeight.w400),
@@ -301,7 +349,7 @@ class EarningList extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text(
                               '₹5000',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.06,
                                   color: barColor,
                                   fontWeight: FontWeight.w400),
@@ -311,7 +359,7 @@ class EarningList extends StatelessWidget {
 
                             child: Text(
                               'View More',
-                              style: TextStyle(
+                              style: poppinsStyle(
                                   fontSize: Get.width * 0.04,
                                   color: barColor,
                                   fontWeight: FontWeight.w400),

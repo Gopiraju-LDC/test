@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:test_application/constants/constants.dart';
 
 import '../constants/imageConstants.dart';
+import 'customOptionWidget.dart';
 
 class GetProfileView extends StatefulWidget {
   const GetProfileView({super.key});
@@ -65,7 +66,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Kakashi Hatke',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.05,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -75,7 +76,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Brundavanam',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -85,7 +86,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       '+9182647989',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -95,7 +96,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'Pan : GY1234568N7',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -105,7 +106,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                                     width: Get.width * 0.35,
                                     child: Text(
                                       'GST : 114563325889',
-                                      style: TextStyle(
+                                      style: poppinsStyle(
                                           fontSize: Get.width * 0.035,
                                           color: textColor,
                                           fontWeight: FontWeight.w400),
@@ -162,7 +163,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                       width: Get.width * 0.55,
                       child: Text(
                         'Subscribe To Boost Your Bookings',
-                        style: TextStyle(
+                        style: poppinsStyle(
                             fontSize: Get.width * 0.04,
                             color: textColor,
                             fontWeight: FontWeight.w400),
@@ -172,7 +173,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                       width: Get.width * 0.55,
                       child: Text(
                         'Your Will Get 100 More Marketing Than Regular Properties We Give You Top Most Recommends ',
-                        style: TextStyle(
+                        style: poppinsStyle(
                             fontSize: Get.width * 0.03,
                             color: textColor,
                             letterSpacing: 0.5,
@@ -189,7 +190,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   child: Text(
                     'Subscribe Now',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: Colors.white,
                         letterSpacing: 0.5,
@@ -222,7 +223,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   width: Get.width * 0.45,
                   child: Text(
                     'In Review',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.055,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -235,7 +236,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   width: Get.width * 0.45,
                   child: Text(
                     'Will Review in 12 Hrs',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.035,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -264,7 +265,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   Text(
                     'View 1',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -290,7 +291,7 @@ class _GetProfileViewState extends State<GetProfileView> {
                   ),
                   Text(
                     'View 2',
-                    style: TextStyle(
+                    style: poppinsStyle(
                         fontSize: Get.width * 0.03,
                         color: textColor,
                         letterSpacing: 0.5,
@@ -320,7 +321,7 @@ class _GetProfileViewState extends State<GetProfileView> {
               ),
               Text(
                 'Log Out',
-                style: TextStyle(
+                style: poppinsStyle(
                     fontSize: Get.width * 0.055,
                     color: Colors.red,
                     letterSpacing: 0.5,
@@ -334,47 +335,3 @@ class _GetProfileViewState extends State<GetProfileView> {
   }
 }
 
-class CustomOptionWidget extends StatelessWidget {
-  final String title;
-  final VoidCallback? onTap;
-
-  CustomOptionWidget({
-    required this.title,
-    this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        margin: EdgeInsets.only(
-            left: Get.width * 0.05,
-            right: Get.width * 0.05,
-            top: Get.width * 0.05),
-        decoration: BoxDecoration(
-            color: backgroundColor, borderRadius: BorderRadius.circular(10)),
-        padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontSize: Get.width * 0.04,
-                  fontWeight: FontWeight.w400,
-                  color: textColor,
-                ),
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_outlined,
-              size: 22.0,
-              color: textColor,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
