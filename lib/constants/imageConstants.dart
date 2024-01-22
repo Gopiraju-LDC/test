@@ -19,7 +19,8 @@ class ImageIcons {
   static const String MIC = 'assets/ldIcons/mic.png';
   static const String EDIT_ICON = 'assets/ldIcons/edit.png';
   static const String LOGOUT_ICON = 'assets/ldIcons/logout.png';
-
+  static const String DOWNLOAD_ICON = 'assets/ldIcons/download.png';
+  static const String WHATSAPP_ICON = 'assets/ldIcons/whatsapp.png';
 }
 class Iconss {
 
