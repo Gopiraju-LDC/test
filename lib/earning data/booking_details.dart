@@ -18,7 +18,8 @@ class BookingDetails extends StatefulWidget {
 class _BookingDetailsState extends State<BookingDetails> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -43,9 +44,12 @@ class _BookingDetailsState extends State<BookingDetails> {
         ),
         elevation: 0,
         actions: [
-          Image.asset(ImageIcons.DOWNLOAD_ICON,
-            height: 20,
-            width: 20,)
+          Container(
+            margin: EdgeInsets.only(right: 10),
+            child: Image.asset(ImageIcons.WHATSAPP_ICON,
+              height: 30,
+              width: 30,),
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -185,7 +189,6 @@ class _BookingDetailsState extends State<BookingDetails> {
                   filledIconData: Icons.star,
                   halfFilledIconData: Icons.star_half,
                   defaultIconData: Icons.star_border,
-                  spacing: .5,
                 ),
                 SizedBox(
                   height: Get.height * 0.015,

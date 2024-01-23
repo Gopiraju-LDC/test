@@ -7,6 +7,7 @@ import 'package:test_application/earning%20data/customOptionWidget.dart';
 
 import '../constants/constants.dart';
 import '../constants/imageConstants.dart';
+import 'getDateWiseBookingDetails.dart';
 
 class StatementView extends StatefulWidget {
   const StatementView({super.key});
@@ -51,7 +52,10 @@ class _StatementViewState extends State<StatementView> {
                         itemBuilder: (context , index){
                           DateTime datee = DateTime.now();
                           //dateTime = DateFormat('dd-MM-yyyy,').format(datee);
-                          return CustomOptionWidget(title: getTitle(index));
+                          return CustomOptionWidget(title: getTitle(index),
+                            onTap: (){
+                            Get.to(const DateWiseStatement());
+                            },);
                         }),
                   )
                 ],
