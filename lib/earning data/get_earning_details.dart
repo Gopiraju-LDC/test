@@ -9,6 +9,7 @@ import 'package:test_application/earning%20data/statment.dart';
 import '../constants/constants.dart';
 import '../constants/imageConstants.dart';
 import 'booking_details.dart';
+import 'custom_calender.dart';
 import 'get_profileView.dart';
 
 class EarningDetailView extends StatefulWidget {
@@ -51,7 +52,7 @@ class _EarningDetailViewState extends State<EarningDetailView> {
         actions: [
           IconButton(
             onPressed: () {
-              Get.to(const GetProfileView());
+              Get.to(const CustomCalender());
             },
             icon: Image.asset(
               Iconss.CALENDAR_ICON,
